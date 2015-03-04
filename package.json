@@ -1,0 +1,20 @@
+{
+  "name": "usfws-southeast",
+  "description": "These are the source files for the Southeast Region's public website.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usfws/southeast"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^0.18.0",
+    "load-grunt-tasks": "^3.1.0",
+    "grunt-shell": "^1.1.2",
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-autoprefixer": "^2.2.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "jshint-stylish": "^1.0.1"
+  }
+}

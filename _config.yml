@@ -1,0 +1,42 @@
+# Site settings
+title: "U.S. Fish & Wildlife Service: Southeast Region"
+email: webmaster@fws.gov
+description: > # this means to ignore newlines until "baseurl:"
+  The Service’s Southeast Region is home to a rich diversity of 
+  natural resources spread across 10 states stretching from the 
+  Appalachian Mountains south to the Caribbean islands and west 
+  to the Ozarks, including the southern half of the Mississippi 
+  River Basin. The Regional Office is located in Atlanta, Georgia, 
+  a vibrant and exciting Southern city. Our region covers an area 
+  more than 430,000 square miles, which includes the states of Alabama, 
+  Arkansas, Florida, Georgia, Kentucky, Louisiana, Mississippi, North 
+  Carolina, South Carolina, Tennessee, as well as the Commonwealth 
+  of Puerto Rico and the Virgin Islands.
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://fws.gov" # the base hostname & protocol for your site
+
+excerpt_separator: <!--more-->
+
+# Social
+twitter_username: usfwssoutheast
+github_username:  usfws
+facebook_username: usfwssoutheast
+flickr_username: usfwssoutheast
+
+# Build settings
+markdown: kramdown
+
+# Exclusions
+exclude: [
+  .git,
+  .gitignore,
+  .DS_Store,
+  CNAME
+  src/,
+  .sass-cache,
+  package.json,
+  Gruntfile.js,
+  node_modules,
+  readme.md
+]
