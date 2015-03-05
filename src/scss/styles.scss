@@ -1,2 +1,13 @@
 @import "variables";
+@import "fonts";
+@import "typebase";
+@import "mixins/mixins";
 @import "base";
+@import "header";
+@import "search-form";
+@import "gallery";
+@import "footer";
+
+.main-content {
+  padding: 0 3%;
+}

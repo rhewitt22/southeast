@@ -1,0 +1,36 @@
+/*-------------------*\
+    Button Variables
+\*-------------------*/
+
+$button-color: darken($color-fws-blue, 10);
+
+/*-------------------*\
+      Button Mixin
+\*-------------------*/
+
+%btn {
+  transition: border-color 0.5s ease, background-color 0.5s ease;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  padding: 7px;
+}
+
+@mixin button($color: $button-color) {
+  @extend %btn;
+  color: #fff;
+  background-color: lighten($color, 10);
+  border: 4px solid $color;
+  &:hover {
+    color: #fff;
+    background-color: lighten($color, 20);
+    border: 4px solid lighten($color, 10);
+  }
+  &:active {
+    background-color: lighten($color, 10);
+  }
+  &:visited {
+    color: #fff;
+  }
+}

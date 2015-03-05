@@ -38,7 +38,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '_src/css/styles.css': '_src/scss/styles.scss'
+          'src/css/styles.css': 'src/scss/styles.scss'
         }
       }
     },
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 
     shell: {
       jekyllServe: {
-        command: 'jekyll serve --baseurl='
+        command: 'jekyll serve'
       },
       jekyllBuild: {
         command: 'jekyll build'
@@ -63,18 +63,22 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
+
       site: {
         files: ['*.html', '**/*.html', '*.md', '**/*.md', '!_site/**/*.html', '!_site/**/*.md'],
         tasks: ['shell:jekyllBuild']
       },
+
       js: {
         files: ['src/js/*.js'],
         tasks: ['jshint', 'shell:jekyllBuild']
       },
+
       css: {
-        files: ['src/scss/*.scss'],
+        files: ['src/scss/*.scss', 'src/scss/**/*.scss'],
         tasks: ['sass', 'autoprefixer', 'shell:jekyllBuild']
       },
+
       svgIcons: {
         files: ['svg/*.svg'],
         tasks: ['svgstore', 'shell:jekyllBuild']

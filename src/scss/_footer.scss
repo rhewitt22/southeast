@@ -1,0 +1,47 @@
+$footer-color: #eee;
+
+footer {
+  position: relative;
+  background-color: $footer-color;
+  border-top: 1px solid white;
+  margin-top: 10px;
+
+  ul {
+    list-style-type: none;
+  }
+
+  .layout {
+    padding: 3%;
+  }
+}
+
+.social-media-list {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  
+  a {
+    text-decoration: none;
+  }
+}
+
+.footer-links {
+  text-align: center;
+  padding-bottom: 20px;
+
+  ul {
+    padding: 0;
+
+    li {
+      display: inline;
+
+      &:after {
+        content: ' | ';
+      }
+
+      &:last-child:after {
+        content: '';
+      }
+    }
+  }
+}
