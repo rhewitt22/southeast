@@ -2,6 +2,8 @@
 layout: post
 thumbnail: img/thumbnail/le-sea-turtle-eggs.jpg
 credit: FWC Law Enforcement
+
+category: news
 ---
 
 A Palm Beach County resident was sentenced today by U.S. District Judge Kenneth Marra for unlawfully transporting endangered sea turtles.
