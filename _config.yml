@@ -26,12 +26,13 @@ exclude: [
   .git,
   .gitignore,
   .DS_Store,
-  CNAME
-  src/,
+  CNAME,
+  src,
   .sass-cache,
   package.json,
   Gruntfile.js,
   node_modules,
-  readme.md,
-  southeast.sublime-project
+  README.md,
+  southeast.sublime-project,
+  southeast.sublime-workspace
 ]

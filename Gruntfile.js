@@ -59,6 +59,40 @@ module.exports = function(grunt) {
       }
     },
 
+    svgstore: {
+      options: {
+        prefix : 'shape-',
+        cleanup: false,
+        svg: {
+          style: 'display: none;'
+        }
+      },
+      default: {
+        files: {
+          '_includes/svg-defs.svg': ['src/svg/*.svg']
+        }
+      }
+    },
+
+    svgmin: {
+      options: {
+        plugins: [
+          {
+            removeViewBox: false
+          },{
+            removeUselessStrokeAndFill: false
+          }
+        ]
+      },
+      dist: {
+        expand: true,
+        cwd: 'src/svg',
+        src: ['*.svg'],
+        dest: 'src/svg/min',
+        ext: '.svg'
+      }
+    },
+
     watch: {
       options: {
         livereload: true
@@ -80,23 +114,8 @@ module.exports = function(grunt) {
       },
 
       svgIcons: {
-        files: ['svg/*.svg'],
-        tasks: ['svgstore', 'shell:jekyllBuild']
-      }
-    },
-
-    svgstore: {
-      options: {
-        prefix : 'shape-',
-        cleanup: false,
-        svg: {
-          style: 'display: none;'
-        }
-      },
-      default: {
-        files: {
-          '_includes/svg-defs.svg': ['svg/*.svg']
-        }
+        files: ['src/svg/*.svg'],
+        tasks: ['svgmin', 'svgstore', 'shell:jekyllBuild']
       }
     }
 
