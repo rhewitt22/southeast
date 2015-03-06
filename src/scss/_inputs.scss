@@ -15,8 +15,24 @@ input[type=search] {
 
   &:focus {
     color: $input-color;
-
     border: 4px solid darken($input-color, 10);
-    box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
   }
+}
+
+// Input placeholder text
+::-webkit-input-placeholder {
+   color: $input-color;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $input-color;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $input-color;  
+}
+
+:-ms-input-placeholder {  
+   color: $input-color;  
 }

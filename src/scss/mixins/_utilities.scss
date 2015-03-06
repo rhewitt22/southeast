@@ -10,14 +10,14 @@
  *    `:before` to contain the top-margins of child elements.
  */
 @mixin clearfix() {
-  .clearfix:before,
-  .clearfix:after {
-      content: " "; /* 1 */
-      display: table; /* 2 */
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
   }
 
-  .clearfix:after {
-      clear: both;
+  &:after {
+    clear: both;
   }
 }
 
@@ -27,12 +27,12 @@
  */
 
 @mixin visuallyhidden() {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

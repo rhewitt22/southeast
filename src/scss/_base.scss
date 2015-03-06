@@ -62,6 +62,17 @@ a:hover {
 
 img {
   border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 3px solid $color-fws-green;
+  padding: 0;
+  margin-right: 15%;
 }
 
 svg:not(:root) {

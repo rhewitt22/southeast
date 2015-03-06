@@ -3,47 +3,51 @@ layout: default
 title: Welcome to the Southeast Region of the U.S. Fish &amp; Wildlife Service
 ---
 
-<ul class="gallery">
-  <li>
-    <div class="home-gallery-item">
-      <h2>Explore</h2>
-      <img src="http://placehold.it/200x150" alt="">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur quam repudiandae assumenda a ratione beatae doloribus, recusandae dolorem, eos autem quasi repellendus, possimus nobis voluptatem, eaque vero. Explicabo, soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quasi, quae, odit incidunt non mollitia eligendi corrupti, optio eum provident rerum quas reprehenderit temporibus maiores amet quisquam atque voluptas, deserunt.</p>
-    </div>
+<h1>Welcome to the Southeast!</h1>
+<hr>
+<p class="welcome-text">We are passionate people working to conserve and enhance America's wild side.  We are public servants providing expert conservation consutation services to the states of Alabama, Arkansas, Florida, Georgia, Kentucky, Louisiana, Mississippi, North Carolina, South Carolina, Puerto Rico and the U.S. Virgin Islands.</p>
+
+<ul class="graphic-launch-point">
+  <li class="launch-point-item">
+    <a href="#"><img class="launch-explore" src="{{ 'img/map-compass.jpg' | prepend: site.baseurl }}" alt=""></a>
+  </li><!-- 
+--><li class="launch-point-item">
+    <a href="#"><img class="launch-wildlife" src="{{ 'img/bear-cubs.jpg' | prepend: site.baseurl }}" alt=""></a>
+  </li><!-- 
+--><li class="launch-point-item">
+    <a href="#"><img class="launch-refuges" src="{{ 'img/sunset-at-nox.jpg' | prepend: site.baseurl }}" alt=""></a>
   </li>
+</ul>
+
+<h2>News and Events</h2>
+<hr class="news-hr">
+<ul class="news-teasers">
+  {% for post in site.posts limit:3 %}
   <li>
-    <div class="home-gallery-item">
-      <h2>Wildlife</h2>
-      <img src="http://placehold.it/200x150" alt="">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur quam repudiandae assumenda a ratione beatae doloribus, recusandae dolorem, eos autem quasi repellendus, possimus nobis voluptatem, eaque vero. Explicabo, soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quasi, quae, odit incidunt non mollitia eligendi corrupti, optio eum provident rerum quas reprehenderit temporibus maiores amet quisquam atque voluptas, deserunt.</p>
-    </div>
+    <img src="{{ post.thumbnail | prepend: site.baseurl }}" alt="">
+    <span class="news-date">{{ post.date | date: "%B %-d %Y" }}: </span> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    {% if post.credit %}<p class="news-photo-credit">Photo: {{ post.credit }}</p>{% endif %}
   </li>
+  {% endfor %}
+</ul>
+
+<h2>Our Regional Priorities</h2>
+<hr>
+<ul class="regional-priorities">
   <li>
-    <div class="home-gallery-item">
-      <h2>Refuges</h2>
-      <img src="http://placehold.it/200x150" alt="">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur quam repudiandae assumenda a ratione beatae doloribus, recusandae dolorem, eos autem quasi repellendus, possimus nobis voluptatem, eaque vero. Explicabo, soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quasi, quae, odit incidunt non mollitia eligendi corrupti, optio eum provident rerum quas reprehenderit temporibus maiores amet quisquam atque voluptas, deserunt.</p>
-    </div>
-  </li>
-  <li>
-    <div class="home-gallery-item">
-      <h2>News and Media</h2>
-      <img src="http://placehold.it/200x150" alt="">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur quam repudiandae assumenda a ratione beatae doloribus, recusandae dolorem, eos autem quasi repellendus, possimus nobis voluptatem, eaque vero. Explicabo, soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quasi, quae, odit incidunt non mollitia eligendi corrupti, optio eum provident rerum quas reprehenderit temporibus maiores amet quisquam atque voluptas, deserunt.</p>
-    </div>
-  </li>
-  <li>
-    <div class="home-gallery-item">
-      <h2>Events</h2>
-      <img src="http://placehold.it/200x150" alt="">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur quam repudiandae assumenda a ratione beatae doloribus, recusandae dolorem, eos autem quasi repellendus, possimus nobis voluptatem, eaque vero. Explicabo, soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quasi, quae, odit incidunt non mollitia eligendi corrupti, optio eum provident rerum quas reprehenderit temporibus maiores amet quisquam atque voluptas, deserunt.</p>
-    </div>
-  </li>
-  <li>
-    <div class="home-gallery-item">
-      <h2>Social Media</h2>
-      <img src="http://placehold.it/200x150" alt="">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur quam repudiandae assumenda a ratione beatae doloribus, recusandae dolorem, eos autem quasi repellendus, possimus nobis voluptatem, eaque vero. Explicabo, soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quasi, quae, odit incidunt non mollitia eligendi corrupti, optio eum provident rerum quas reprehenderit temporibus maiores amet quisquam atque voluptas, deserunt.</p>
-    </div>
+    <h3>Species At-Risk</h3>
+    <img src="{{ 'img/alligator-snapping-turtle.jpg' | prepend: site.baseurl }}" alt="">
+  </li><!-- 
+--><li>
+    <h3>After the Spill: Restoring the Gulf</h3>
+    <img src="{{ 'img/gulf-jereme.jpg' | prepend: site.baseurl }}" alt="">
+  </li><!-- 
+--><li>
+    <h3>All Lands, All Hands, All Wildlife</h3>
+    <img src="{{ 'img/cows-in-pasture.jpg' | prepend: site.baseurl }}" alt="">
+  </li><!-- 
+--><li>
+    <h3>Latest Fire/Flood/Crisis Issue</h3>
+    <img src="{{ 'img/katrina.jpg' | prepend: site.baseurl }}" alt="">
   </li>
 </ul>

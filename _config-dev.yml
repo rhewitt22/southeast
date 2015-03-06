@@ -7,7 +7,7 @@ description: > # this means to ignore newlines until "baseurl:"
   LA, MS, NC, SC, TN, as well as the Commonwealth of Puerto Rico 
   and the Virgin Islands.
 
-baseurl: "http://fws.gov/southeast/"
+baseurl: ""
 
 excerpt_separator: <!--more-->
 

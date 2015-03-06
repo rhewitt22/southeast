@@ -17,15 +17,3 @@
     @include flexible-gallery(3);
   }
 }
-
-.home-gallery-item {
-
-  h2 {
-    margin: 0;
-  }
-
-  img {
-    float: right;
-    margin: 1.5rem 0 1.5em 1.5em; 
-  }
-}

@@ -52,10 +52,10 @@ module.exports = function(grunt) {
 
     shell: {
       jekyllServe: {
-        command: 'jekyll serve'
+        command: 'jekyll serve --baseurl='
       },
       jekyllBuild: {
-        command: 'jekyll build'
+        command: 'jekyll build --config _config-dev.yml'
       }
     },
 
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
       },
 
       site: {
-        files: ['*.html', '**/*.html', '*.md', '**/*.md', '!_site/**/*.html', '!_site/**/*.md'],
+        files: ['*.html', '**/*.html', '*.md', '**/*.md', 'img/**/*', '!_site/**/*.html', '!_site/**/*.md'],
         tasks: ['shell:jekyllBuild']
       },
 
