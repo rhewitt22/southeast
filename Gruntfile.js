@@ -109,7 +109,7 @@ module.exports = function(grunt) {
       },
 
       site: {
-        files: ['**/*.html', '**/*.md', 'img/**/*', '!_site/**/*.html', '!_site/**/*.md', '!**/node_modules/**/*'],
+        files: ['**/*.html', '**/*.md', 'img/**/*', '!**/_site/**/*', '!**/node_modules/**/*'],
         tasks: ['shell:jekyllBuild']
       },
 
