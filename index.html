@@ -21,16 +21,7 @@ title: Welcome to the Southeast Region of the U.S. Fish &amp; Wildlife Service
 
 <h2>News and Events</h2>
 <hr class="news-hr">
-<ul class="news-teasers">
-  {% for post in site.posts limit:3 %}
-  <li>
-    <img src="{{ post.thumbnail | prepend: site.baseurl }}" alt="">
-    <span class="news-date">{{ post.date | date: "%B %-d %Y" }}: </span> <a href="{{ post.url }}">{{ post.title }}</a>
-    {% if post.credit %}<p class="news-photo-credit">Photo: {{ post.credit }}</p>{% endif %}
-  </li>
-  {% endfor %}
-  <p><a href="{{ 'news/' | prepend: site.baseurl }}">Go to the newsroom...</a></p>
-</ul>
+{% include news-teasers.html %}
 
 <h2>Our Regional Priorities</h2>
 <hr>

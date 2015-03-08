@@ -23,6 +23,16 @@ module.exports = function(grunt) {
       }
     },
 
+    concat: {
+      options: {
+        separator: ';',
+      },
+      polyfills: {
+        src: ['src/js/vendor/picturefill.js'],
+        dest: 'js/polyfills.js',
+      },
+    },
+
     jshint: {
       options: {
         jshintrc: true,
@@ -99,13 +109,13 @@ module.exports = function(grunt) {
       },
 
       site: {
-        files: ['*.html', '**/*.html', '*.md', '**/*.md', 'img/**/*', '!_site/**/*.html', '!_site/**/*.md'],
+        files: ['**/*.html', '**/*.md', 'img/**/*', '!_site/**/*.html', '!_site/**/*.md', '!**/node_modules/**/*'],
         tasks: ['shell:jekyllBuild']
       },
 
       js: {
-        files: ['src/js/*.js'],
-        tasks: ['jshint', 'shell:jekyllBuild']
+        files: ['src/js/*.js', '!**/node_modules/**/*'],
+        tasks: ['jshint', 'concat', 'shell:jekyllBuild']
       },
 
       css: {
@@ -124,6 +134,6 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('serve', ['shell:jekyllServe']);
-  grunt.registerTask('default', ['sass', 'autoprefixer', 'jshint', 'shell:jekyllBuild', 'watch']);
-  grunt.registerTask('build', ['sass', 'autoprefixer', 'jshint', 'uglify', 'shell:jekyllBuild']);
+  grunt.registerTask('default', ['sass', 'autoprefixer', 'jshint', 'concat', 'shell:jekyllBuild', 'watch']);
+  grunt.registerTask('build', ['sass', 'autoprefixer', 'jshint', 'concat', 'uglify', 'shell:jekyllBuild']);
 };

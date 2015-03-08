@@ -1,29 +1,30 @@
 $footer-color: $color-fws-dark-blue;
 
 .site-footer {
-  position: relative;
-  background-color: $footer-color;
-  border-top: 1px solid white;
+  position: relative;  
+  border-top: 1px solid #fff;
   margin-top: 10px;
-  color: white;
+  background-color: $footer-color;
+  background: linear-gradient($footer-color, darken($footer-color, 10));
+  color: #fff;
 
   h2 {
-    color: white;
+    color: #fff;
   }
 
   a {
-    color: white;
+    color: #fff;
 
     &:hover {
-      color: darken(white, 15);
+      color: darken(#fff, 15);
     }
 
     &:active {
-      color: darken(white, 25);
+      color: darken(#fff, 25);
     }
 
     &:visited {
-      color: white;
+      color: #fff;
     }
   }
 
