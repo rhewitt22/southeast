@@ -2,12 +2,15 @@
   'use strict';
   var offices = {{ site.data.offices | jsonify }};
   var map = createMap();
-  addLayers(map);
+  var $modal = $('.modal');
 
-  $('.modal').easyModal();
+  L.Icon.Default.imagePath = '../img/';
+  addLayers(map, offices);
+
+  $modal.easyModal();
 
   $('.trigger-modal').on('click', function() {
-    $('.modal').trigger('openModal');
+    $modal.trigger('openModal');
   });
 
   $.each(offices.features, function() {
@@ -19,7 +22,7 @@
     minLength: 3,
     position: { my : "right top", at: "right bottom" },
     select: function( event, ui ) {
-      window.location.hash = ui.item.label.toLowerCase().replace(/\s+/g, '');
+      zoomToOffice(map, offices, ui.item.label);
     }
   });
 
@@ -30,7 +33,6 @@ function createMap() {
 
   var map = L.map('map', {
     center: [33.761907, -85.733524],
-    zoom: 5,
     zoomControl: false
   });
 
@@ -39,8 +41,16 @@ function createMap() {
   return map;
 }
 
-function addLayers(map) {
+function addLayers(map, offices) {
   'use strict';
+
+  var layer = L.geoJson(offices, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup(feature.properties.ORGNAME);
+    }
+  }).addTo(map);
+
+  map.fitBounds(layer.getBounds());
 
   L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
     attribution: '<a href="#about" class="trigger-modal">About</a>',
@@ -48,4 +58,11 @@ function addLayers(map) {
     minZoom: 4,
     maxZoom: 18
   }).addTo(map);
+}
+
+function zoomToOffice(map, offices, name) {
+  var office = $.grep(offices.features, function(el, i) {
+    return el.properties.ORGNAME == name;
+  });
+  map.setView(office[0].geometry.coordinates.reverse(), 13);
 }
