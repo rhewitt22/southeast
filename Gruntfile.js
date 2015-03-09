@@ -24,13 +24,21 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      options: {
-        separator: ';',
-      },
       polyfills: {
         src: ['src/js/vendor/picturefill.js'],
         dest: 'js/polyfills.js',
       },
+      map: {
+        src: [
+          'src/js/yaml.js', 
+          'src/js/vendor/jquery-1.11.2.js', 
+          'src/js/vendor/leaflet.min.js', 
+          'src/js/vendor/jquery.easyModal.js', 
+          'src/js/vendor/jquery-autocomplete.min.js', 
+          'src/js/map.js'
+        ],
+        dest: 'js/map.js'
+      }
     },
 
     jshint: {
@@ -48,15 +56,18 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'src/css/styles.css': 'src/scss/styles.scss'
+          'src/css/styles.css': 'src/scss/styles.scss',
+          'src/css/map.css': 'src/scss/map.scss'
         }
       }
     },
 
     autoprefixer: {
       global: {
-        src: 'src/css/styles.css',
-        dest: 'css/styles.css'
+        expand: true,
+        flatten: true,
+        src: 'src/css/*.css',
+        dest: 'css/'
       }
     },
 
