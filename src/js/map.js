@@ -17,7 +17,7 @@
 
   L.Icon.Default.imagePath = '/region4/demo/img/map';
 
-  $.getJSON('../js/offices.geojson', function(geojson) {
+  $.getJSON('/region4/demo/js/offices.js', function(geojson) {
     layers = addLayers(map, geojson);
     initAutocomplete(map, geojson);
     registerLegendEvents(layers);
