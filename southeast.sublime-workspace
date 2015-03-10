@@ -59,30 +59,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/scss/styles.scss",
-			"settings":
-			{
-				"buffer_size": 262,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 1723,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/scss/_home.scss",
-			"settings":
-			{
-				"buffer_size": 2029,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -149,14 +125,23 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/C/wamp/www/southeast"
-	],
 	"file_history":
 	[
+		"/C/wamp/www/southeast/southeast.sublime-project",
+		"/C/wamp/www/southeast/_site/index.html",
+		"/C/wamp/www/website/pfw/js/pfw.js",
+		"/C/wamp/www/website/pfw/index.html",
+		"/C/wamp/www/southeast/_includes/news-teasers.html",
+		"/C/wamp/www/southeast/index.html",
+		"/C/wamp/www/southeast/_config.yml",
+		"/C/wamp/www/southeast/src/scss/_fonts.scss",
+		"/C/Users/rhewitt/Desktop/webfontkit-20150310-081656/stylesheet.css",
+		"/C/Users/rhewitt/Desktop/webfontkit-20150310-081656/generator_config.txt",
+		"/C/wamp/www/southeast/src/js/map.js",
 		"/C/Users/rhewitt/Desktop/roy.txt",
 		"/C/wamp/www/southeast/Gruntfile.js",
+		"/C/wamp/www/southeast/src/scss/_home.scss",
+		"/C/wamp/www/southeast/src/scss/styles.scss",
 		"/C/wamp/www/southeast/src/scss/mixins/_photos.scss",
 		"/C/wamp/www/website/home/archive/index.html",
 		"/C/wamp/www/southeast/src/scss/mixins/_mixins.scss",
@@ -165,11 +150,8 @@
 		"/C/wamp/www/southeast/_includes/footer.html",
 		"/C/wamp/www/southeast/src/scss/_footer.scss",
 		"/C/wamp/www/southeast/src/scss/_base.scss",
-		"/C/wamp/www/southeast/src/scss/_home.scss",
 		"/C/wamp/www/southeast/src/scss/_header.scss",
 		"/C/wamp/www/southeast/_config-dev.yml",
-		"/C/wamp/www/southeast/_config.yml",
-		"/C/wamp/www/southeast/_site/index.html",
 		"/C/wamp/www/southeast/_posts/2015-03-04-states-to-receive-more-than-45-million-to-support-wildlife-habitats-and-imperiled-species.md",
 		"/C/wamp/www/southeast/_includes/header.html",
 		"/C/wamp/www/southeast/_posts/2015-02-13-palm-beach-county-man-sentenced-for-unlawfully-transporting-endangered-sea-turtles.md",
@@ -187,7 +169,6 @@
 		"/C/wamp/www/website/Norfok/index.html",
 		"/C/wamp/www/website/Norfok/connect.html",
 		"/C/wamp/www/website/Norfok/aboutus.html",
-		"/C/wamp/www/southeast/index.html",
 		"/C/wamp/www/southeast/src/scss/mixins/_flexible-gallery.scss",
 		"/C/wamp/www/southeast/_layouts/default.html",
 		"/C/wamp/www/Old/fws-prototype/_includes/footer.html",
@@ -198,9 +179,7 @@
 		"/C/wamp/www/southeast/src/scss/_normalize.scss",
 		"/C/wamp/www/southeast/src/css/styles.css",
 		"/C/wamp/www/southeast/src/scss/_headings.scss",
-		"/C/wamp/www/southeast/src/scss/_fonts.scss",
 		"/C/wamp/www/southeast/css/styles.css",
-		"/C/wamp/www/southeast/src/scss/styles.scss",
 		"/C/wamp/www/southeast/_includes/open-graph.html",
 		"/C/wamp/www/southeast/_includes/head.html",
 		"/C/wamp/www/website/natchitoches/index.html",
@@ -241,8 +220,6 @@
 		"/C/Ruby200-x64/lib/ruby/2.0.0/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem",
 		"/C/Ruby200-x64/share/man/man1/ruby.1",
 		"/C/Users/rhewitt/Desktop/AddTrustExternalCARoot-2048.pem",
-		"/C/wamp/www/website/pfw/index.html",
-		"/C/wamp/www/website/pfw/js/pfw.js",
 		"/C/wamp/www/website/pfw/css/owl.carousel.css",
 		"/C/wamp/www/website/pfw/resources/index.html",
 		"/C/Users/rhewitt/AppData/Local/Temp/1/Temp1_owl.carousel (2).zip/owl.carousel.2.0.0-beta.2.4/assets/owl.carousel.css",
@@ -277,12 +254,7 @@
 		"/C/wamp/www/website/at-risk-species/landing-page.css",
 		"/C/wamp/www/website/at-risk-species/contact.html",
 		"/C/wamp/www/website/at-risk-species/contact/index.html",
-		"/C/wamp/www/website/at-risk-species/distinctions.html",
-		"/C/wamp/www/website/at-risk-species/background/index.html",
-		"/C/wamp/www/website/at-risk-species/finder/index.html",
-		"/C/wamp/www/website/at-risk-species/landowner-toolkit/index.html",
-		"/C/wamp/www/website/index.html",
-		"/C/wamp/www/website/at-risk-species/candidates/index.html"
+		"/C/wamp/www/website/at-risk-species/distinctions.html"
 	],
 	"find":
 	{
@@ -321,6 +293,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"css",
+			"shell",
 			"hr",
 			"scale",
 			"quotes",
@@ -446,9 +420,7 @@
 			"css",
 			"07",
 			"\\n",
-			"\\r",
-			"/r",
-			"/n"
+			"\\r"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -510,97 +482,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/scss/styles.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 262,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1723,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 580.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/scss/_home.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2029,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1758,
-								1758
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1972.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
