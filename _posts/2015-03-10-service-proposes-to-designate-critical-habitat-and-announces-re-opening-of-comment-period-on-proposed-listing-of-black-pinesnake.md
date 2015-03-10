@@ -12,7 +12,7 @@ The U.S. Fish and Wildlife Service proposes to designate critical habitat for th
 At the same time, the Service also announces the availability of a draft economic analysis of the proposed critical habitat designation.
 
 The public is invited to submit comments on all of these actions through a 60-day comment period ending May 11, 2015.
-
+<!--more-->
 This harmless snake is native to the longleaf pine forests, an ecosystem that is also in peril.  Longleaf forests once covered over 90 million acres -- about the size of Montana -- from the South Atlantic Coastal Plain of southern Virginia to the West Gulf Coastal Plain of Texas.  Today, less than four percent -- about the size of Massachusetts -- remain.  The longleaf pine ecosystem is one of the most ecologically diverse in the world, with more than 900 plant species that are found nowhere else. 
 
 “The black pinesnake is an important part of the longleaf pine ecosystem in southern Alabama and Mississippi,” said Cindy Dohner, the Service’s Southeast Regional Director.  “Identifying critical habitat will highlight areas important to the pinesnake, complementing the proposed listing and enhancing some of the conservation efforts that are also already underway for other wildlife.”

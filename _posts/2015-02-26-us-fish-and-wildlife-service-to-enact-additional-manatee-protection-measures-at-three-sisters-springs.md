@@ -12,7 +12,7 @@ The U.S. Fish and Wildlife Service published its Final Environmental Assessment 
 This allows the Service to implement the precautionary measures to avert disturbance of manatees from watercraft and manatee viewing activities for the remainder of the 2014 – 2015 manatee season.
 
 “We will continue to study this complex issue as we plan for long term management in the upcoming Comprehensive Conservation Plan for the entire refuge,” said Gude.
-
+<!--more-->
 After receiving input from the public, a proposal to restrict in-water visitation only between the hours of 10:00 a.m. to 5:00 p.m. was not adopted.  Due to the tidal influence on manatee movements, it was determined that limiting visitor use to these hours was overly restrictive and unsubstantiated.  The refuge will instead flexibly-manage opening and closing the springs on an intra-day basis using observations of tidal cycles and manatee numbers in Three Sisters Springs.
 
 The following actions will now take effect for this season:

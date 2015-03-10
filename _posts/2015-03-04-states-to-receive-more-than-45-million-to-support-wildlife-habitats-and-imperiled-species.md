@@ -10,7 +10,7 @@ State efforts to protect species and habitats in greatest need of conservation r
 “The State Wildlife Grant Program has made a significant impact by preventing the need to list species under the Endangered Species Act,” said Service Director Dan Ashe. “The program identifies the highest priorities in each state to effectively conserve and protect species on a large landscape scale.”
 
 The SWG program awards grants for projects that implement strategies to conserve priority species contained in approved State Wildlife Action Plans. All 50 states and territorial wildlife agencies have such plans, which collectively provide a nationwide blueprint for actions to conserve rare species, such as the monarch butterfly, for future generations.  
-
+<!--more-->
 Additional examples of how SWG funding supports wildlife conservation initiatives include:
 
  - **Prairie Dog:**  Using SWG funds, Arizona Game and Fish Department developed landscape tools for prairie dog management. Four prairie dog species—the white-tailed, Gunnison’s, Utah and black-tailed—are considered keystone species because they support the conservation needs of more than 12 other western grassland species. Management for these essential species exemplifies a cooperative and adaptive approach that seeks to preclude future listings of targeted species. This multi-state landscape-level conservation project is coordinated by the Western Association of Fish and Wildlife Agencies, which refers to it as the Grassland Initiative. 
