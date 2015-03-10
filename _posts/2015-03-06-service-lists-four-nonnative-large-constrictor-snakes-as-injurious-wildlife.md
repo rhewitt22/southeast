@@ -2,7 +2,7 @@
 layout: post
 subtitle: Protections for Native Wildlife and Sensitive U.S. Ecosystems Strengthened Through Prohibitions on Importation and Interstate Transport
 thumbnail: img/thumbnail/reticulated-python.jpg
-credit: "Reticulated python. Credit: Bjorn Lardner / Colorado State University"
+credit: Bjorn Lardner, Colorado State University
 
 category: news
 ---

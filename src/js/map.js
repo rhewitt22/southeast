@@ -41,10 +41,10 @@
 
     var cluster = new L.MarkerClusterGroup({showCoverageOnHover: false});
     var markers = {
-      refugeMarkers: createOfficeLayer(offices, 'National Wildlife Refuge', 'refuge').addTo(cluster),
-      officeMarkers: createOfficeLayer(offices, 'Ecological Services Field Office', 'refuge').addTo(cluster),
-      hatcheryMarkers: createOfficeLayer(offices, 'National Fish Hatchery', 'hatchery').addTo(cluster),
-      jvMarkers: createOfficeLayer(offices, 'Joint Venture Office', 'hatchery').addTo(cluster)
+      refuges: createOfficeLayer(offices, 'National Wildlife Refuge', 'refuge').addTo(cluster),
+      offices: createOfficeLayer(offices, 'Ecological Services Field Office', 'refuge').addTo(cluster),
+      hatcheries: createOfficeLayer(offices, 'National Fish Hatchery', 'hatchery').addTo(cluster),
+      jvs: createOfficeLayer(offices, 'Joint Venture Office', 'hatchery').addTo(cluster)
     };
     var toggles = {
       'Refuges': new L.layerGroup().addTo(map),
@@ -118,37 +118,37 @@
 
   function registerMapEvents(layers) {
     map.on('overlayremove', function(layer) {
-    switch (layer.name) {
-      case "Refuges":
-        layers.cluster.removeLayer(layers.markers.refugeMarkers);
+      switch (layer.name) {
+      case 'Refuges':
+        layers.cluster.removeLayer(layers.markers.refuges);
         break;
-      case "Offices":
-        layers.cluster.removeLayer(layers.markers.officeMarkers);
+      case 'Offices':
+        layers.cluster.removeLayer(layers.markers.offices);
         break;
-      case "Hatcheries":
-        layers.cluster.removeLayer(layers.markers.hatcheryMarkers);
+      case 'Hatcheries':
+        layers.cluster.removeLayer(layers.markers.hatcheries);
         break;
-      case "Joint Ventures":
-        layers.cluster.removeLayer(layers.markers.jvMarkers);
+      case 'Joint Ventures':
+        layers.cluster.removeLayer(layers.markers.jvs);
         break;
-    }
-  });
-  
-  map.on('overlayadd', function(layer) {
-    switch (layer.name) {
-      case "Refuges":
-        layers.cluster.addLayer(layers.markers.refugeMarkers);
-        break;
-      case "Offices":
-        layers.cluster.addLayer(layers.markers.officeMarkers);
-        break;
-      case "Hatcheries":
-        layers.cluster.addLayer(layers.markers.hatcheryMarkers);
-        break;
-      case "Joint Ventures":
-        layers.cluster.addLayer(layers.markers.jvMarkers);
-        break;
-    }
-  });
+      }
+    });
+    
+    map.on('overlayadd', function(layer) {
+      switch (layer.name) {
+        case 'Refuges':
+          layers.cluster.addLayer(layers.markers.refuges);
+          break;
+        case 'Offices':
+          layers.cluster.addLayer(layers.markers.offices);
+          break;
+        case 'Hatcheries':
+          layers.cluster.addLayer(layers.markers.hatcheries);
+          break;
+        case 'Joint Ventures':
+          layers.cluster.addLayer(layers.markers.jvs);
+          break;
+      }
+    });
   }
 })();
