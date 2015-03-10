@@ -20,7 +20,7 @@
   $.getJSON('../js/offices.geojson', function(geojson) {
     layers = addLayers(map, geojson);
     initAutocomplete(map, geojson);
-    registerMapEvents(layers);
+    registerLegendEvents(layers);
   });
 
   // Prevent form submission from reloading the page
@@ -40,12 +40,21 @@
   function addLayers(map, offices) {
 
     var cluster = new L.MarkerClusterGroup({showCoverageOnHover: false});
-    var markers = {
-      refuges: createOfficeLayer(offices, 'National Wildlife Refuge', 'refuge').addTo(cluster),
-      offices: createOfficeLayer(offices, 'Ecological Services Field Office', 'refuge').addTo(cluster),
-      hatcheries: createOfficeLayer(offices, 'National Fish Hatchery', 'hatchery').addTo(cluster),
-      jvs: createOfficeLayer(offices, 'Joint Venture Office', 'hatchery').addTo(cluster)
-    };
+    var markers = [
+      {
+        name: 'Refuges', 
+        marker: createOfficeLayer(offices, 'National Wildlife Refuge', 'refuge').addTo(cluster)
+      },{
+        name: 'Offices',
+        marker: createOfficeLayer(offices, 'Ecological Services Field Office', 'refuge').addTo(cluster)
+      },{
+        name: 'Hatcheries',
+        marker: createOfficeLayer(offices, 'National Fish Hatchery', 'hatchery').addTo(cluster)
+      },{
+        name: 'Joint Ventures',
+        marker: createOfficeLayer(offices, 'Joint Venture Office', 'hatchery').addTo(cluster)
+      }
+    ];
     var toggles = {
       'Refuges': new L.layerGroup().addTo(map),
       'Offices': new L.layerGroup().addTo(map),
@@ -116,39 +125,15 @@
     });
   }
 
-  function registerMapEvents(layers) {
-    map.on('overlayremove', function(layer) {
-      switch (layer.name) {
-      case 'Refuges':
-        layers.cluster.removeLayer(layers.markers.refuges);
-        break;
-      case 'Offices':
-        layers.cluster.removeLayer(layers.markers.offices);
-        break;
-      case 'Hatcheries':
-        layers.cluster.removeLayer(layers.markers.hatcheries);
-        break;
-      case 'Joint Ventures':
-        layers.cluster.removeLayer(layers.markers.jvs);
-        break;
-      }
-    });
-    
-    map.on('overlayadd', function(layer) {
-      switch (layer.name) {
-        case 'Refuges':
-          layers.cluster.addLayer(layers.markers.refuges);
-          break;
-        case 'Offices':
-          layers.cluster.addLayer(layers.markers.offices);
-          break;
-        case 'Hatcheries':
-          layers.cluster.addLayer(layers.markers.hatcheries);
-          break;
-        case 'Joint Ventures':
-          layers.cluster.addLayer(layers.markers.jvs);
-          break;
-      }
+  function registerLegendEvents(layers) {
+    map.on('overlayremove overlayadd', function(layer) {
+      $.each(layers.markers, function(i, el) {
+        if (el.name === layer.name && layer.type === 'overlayremove') {
+          layers.cluster.removeLayer(el.marker);
+        } else if (el.name === layer.name && layer.type === 'overlayadd') {
+          layers.cluster.addLayer(el.marker);
+        }
+      });
     });
   }
 })();
