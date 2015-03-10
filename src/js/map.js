@@ -72,6 +72,7 @@
     L.control.layers(null, toggles,{collapsed: false}).addTo(map);
     map.fitBounds(cluster.getBounds());
     map.addLayer(cluster);
+    initModal();
 
     return {
       markers: markers,
@@ -134,6 +135,14 @@
           layers.cluster.addLayer(el.marker);
         }
       });
+    });
+  }
+
+  function initModal() {
+    var $modal = $('.modal');
+    $modal.easyModal();
+    $('.trigger-modal').click(function() {
+      $modal.trigger('openModal');
     });
   }
 })();
