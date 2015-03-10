@@ -30,7 +30,6 @@ module.exports = function(grunt) {
       },
       map: {
         src: [
-          'src/js/yaml.js', 
           'src/js/vendor/jquery-1.11.2.js', 
           'src/js/vendor/leaflet.min.js',
           'src/js/vendor/leaflet.markercluster.min.js',
@@ -74,7 +73,7 @@ module.exports = function(grunt) {
 
     shell: {
       jekyllServe: {
-        command: 'jekyll serve --baseurl='
+        command: 'jekyll serve'
       },
       jekyllBuild: {
         command: 'jekyll build --config _config-dev.yml'

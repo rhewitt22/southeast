@@ -1,34 +1,3 @@
-(function() {
-  'use strict';
-  var offices = {{ site.data.offices | jsonify }};
-  var map = createMap();
-  var $modal = $('.modal');
-
-  L.Icon.Default.imagePath = '{{ "img" | prepend: site.baseurl }}';
-  addLayers(map, offices);
-
-  $modal.easyModal();
-
-  $('.trigger-modal').on('click', function() {
-    $modal.trigger('openModal');
-  });
-
-  $.each(offices.features, function() {
-    this.value = this.properties.ORGNAME;
-  });
-
-  $('#autocomplete-search').autocomplete({
-    source: offices.features,
-    minLength: 3,
-    position: { my : "right top", at: "right bottom" },
-    select: function( event, ui ) {
-      zoomToOffice(map, offices, ui.item.label);
-    }
-  });
-
-  $('form').submit(function(e) { e.preventDefault(); });
-})();
-
 function createMap() {
   'use strict';
 
@@ -64,8 +33,43 @@ function addLayers(map, offices) {
 }
 
 function zoomToOffice(map, offices, name) {
-  var office = $.grep(offices.features, function(el, i) {
-    return el.properties.ORGNAME == name;
+  'use strict';
+
+  var office = $.grep(offices.features, function(el) {
+    return el.properties.ORGNAME === name;
   });
   map.setView(office[0].geometry.coordinates.reverse(), 13);
 }
+
+(function() {
+  'use strict';
+  
+  var map = createMap();
+  var offices;
+  var $modal = $('.modal');
+
+  L.Icon.Default.imagePath = '/region4/demo/img';
+  addLayers(map, offices);
+
+  $modal.easyModal();
+
+  $('.trigger-modal').on('click', function() {
+    $modal.trigger('openModal');
+  });
+
+  $.each(offices.features, function() {
+    this.value = this.properties.ORGNAME;
+  });
+
+  $('#autocomplete-search').autocomplete({
+    source: offices.features,
+    minLength: 3,
+    position: { my : 'right top', at: 'right bottom' },
+    select: function( event, ui ) {
+      zoomToOffice(map, offices, ui.item.label);
+    }
+  });
+
+  $('form').submit(function(e) { e.preventDefault(); });
+})();
+

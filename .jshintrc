@@ -55,7 +55,7 @@
   "devel"         : true,
   "dojo"          : false,
   "jasmine"       : false,
-  "jquery"        : false,
+  "jquery"        : true,
   "mocha"         : true,
   "mootools"      : false,
   "node"          : false,
