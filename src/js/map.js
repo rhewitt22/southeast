@@ -20,6 +20,7 @@
   $.getJSON('../js/offices.geojson', function(geojson) {
     layers = addLayers(map, geojson);
     initAutocomplete(map, geojson);
+    registerMapEvents(layers);
   });
 
   // Prevent form submission from reloading the page
@@ -45,6 +46,12 @@
       hatcheryMarkers: createOfficeLayer(offices, 'National Fish Hatchery', 'hatchery').addTo(cluster),
       jvMarkers: createOfficeLayer(offices, 'Joint Venture Office', 'hatchery').addTo(cluster)
     };
+    var toggles = {
+      'Refuges': new L.layerGroup().addTo(map),
+      'Offices': new L.layerGroup().addTo(map),
+      'Hatcheries': new L.layerGroup().addTo(map),
+      'Joint Ventures': new L.layerGroup().addTo(map)
+    };
 
     var basemap = L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
       attribution: '<a href="#about" class="trigger-modal">About</a>',
@@ -53,12 +60,14 @@
       maxZoom: 18
     }).addTo(map);
 
+    L.control.layers(null, toggles,{collapsed: false}).addTo(map);
     map.fitBounds(cluster.getBounds());
     map.addLayer(cluster);
 
     return {
       markers: markers,
       basemap: basemap,
+      toggles: toggles,
       cluster: cluster
     };
   }
@@ -105,5 +114,41 @@
         zoomToOffice(map, offices, ui.item.label);
       }
     });
+  }
+
+  function registerMapEvents(layers) {
+    map.on('overlayremove', function(layer) {
+    switch (layer.name) {
+      case "Refuges":
+        layers.cluster.removeLayer(layers.markers.refugeMarkers);
+        break;
+      case "Offices":
+        layers.cluster.removeLayer(layers.markers.officeMarkers);
+        break;
+      case "Hatcheries":
+        layers.cluster.removeLayer(layers.markers.hatcheryMarkers);
+        break;
+      case "Joint Ventures":
+        layers.cluster.removeLayer(layers.markers.jvMarkers);
+        break;
+    }
+  });
+  
+  map.on('overlayadd', function(layer) {
+    switch (layer.name) {
+      case "Refuges":
+        layers.cluster.addLayer(layers.markers.refugeMarkers);
+        break;
+      case "Offices":
+        layers.cluster.addLayer(layers.markers.officeMarkers);
+        break;
+      case "Hatcheries":
+        layers.cluster.addLayer(layers.markers.hatcheryMarkers);
+        break;
+      case "Joint Ventures":
+        layers.cluster.addLayer(layers.markers.jvMarkers);
+        break;
+    }
+  });
   }
 })();
