@@ -4,7 +4,7 @@
   var map = createMap();
   var $modal = $('.modal');
 
-  L.Icon.Default.imagePath = '{{ "../img" | prepend: site.baseurl }}';
+  L.Icon.Default.imagePath = '{{ "img" | prepend: site.baseurl }}';
   addLayers(map, offices);
 
   $modal.easyModal();

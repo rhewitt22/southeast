@@ -2,7 +2,7 @@
   {% for post in site.posts limit:3 %}
   <li>
     <img src="{{ post.thumbnail | prepend: site.baseurl }}" alt="">
-    <span class="news-date">{{ post.date | date: "%B %-d, %Y" }}: </span> <a href="{{ post.url }}">{{ post.title }}</a>
+    <span class="news-date">{{ post.date | date: "%B %-d, %Y" }}: </span> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     {% if post.credit %}<p class="news-photo-credit">Photo: {{ post.credit }}</p>{% endif %}
   </li>
   {% endfor %}
