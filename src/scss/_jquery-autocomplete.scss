@@ -164,7 +164,7 @@
 }
 .ui-widget-content {
   border: 1px solid #dddddd;
-  background: #eeeeee url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;
+  background: #eeeeee;
   color: #333333;
 }
 .ui-widget-content a {
@@ -172,7 +172,7 @@
 }
 .ui-widget-header {
   border: 1px solid #e78f08;
-  background: #f6a828 url("images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;
+  background: #f6a828;
   color: #ffffff;
   font-weight: bold;
 }
@@ -186,7 +186,7 @@
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
   border: 1px solid #cccccc;
-  background: #f6f6f6 url("images/ui-bg_glass_100_f6f6f6_1x400.png") 50% 50% repeat-x;
+  background: #f6f6f6;
   font-weight: bold;
   color: #1c94c4;
 }
@@ -202,10 +202,9 @@
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #fbcb09;
-  background: #fdf5ce url("images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+  background: #fff;
   font-weight: bold;
-  color: #c77405;
+  color: $color-fws-blue;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
@@ -222,7 +221,7 @@
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
   border: 1px solid #fbd850;
-  background: #ffffff url("images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
+  background: #ffffff;
   font-weight: bold;
   color: #eb8f00;
 }
@@ -239,19 +238,19 @@
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
   border: 1px solid #fed22f;
-  background: #ffe45c url("images/ui-bg_highlight-soft_75_ffe45c_1x100.png") 50% top repeat-x;
-  color: #363636;
+  background: #fff;
+  color: $color-fws-blue;
 }
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,
 .ui-widget-header .ui-state-highlight a {
-  color: #363636;
+  color: $color-fws-blue;
 }
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
   border: 1px solid #cd0a0a;
-  background: #b81900 url("images/ui-bg_diagonals-thick_18_b81900_40x40.png") 50% 50% repeat;
+  background: #b81900;
   color: #ffffff;
 }
 .ui-state-error a,

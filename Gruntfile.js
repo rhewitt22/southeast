@@ -32,7 +32,8 @@ module.exports = function(grunt) {
         src: [
           'src/js/yaml.js', 
           'src/js/vendor/jquery-1.11.2.js', 
-          'src/js/vendor/leaflet.min.js', 
+          'src/js/vendor/leaflet.min.js',
+          'src/js/vendor/leaflet.markercluster.min.js',
           'src/js/vendor/jquery.easyModal.js', 
           'src/js/vendor/jquery-autocomplete.min.js', 
           'src/js/map.js'

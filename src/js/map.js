@@ -4,7 +4,7 @@
   var map = createMap();
   var $modal = $('.modal');
 
-  L.Icon.Default.imagePath = '../img/';
+  L.Icon.Default.imagePath = '{{ "../img" | prepend: site.baseurl }}';
   addLayers(map, offices);
 
   $modal.easyModal();
@@ -26,6 +26,7 @@
     }
   });
 
+  $('form').submit(function(e) { e.preventDefault(); });
 })();
 
 function createMap() {
@@ -37,18 +38,18 @@ function createMap() {
   });
 
   new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
-
   return map;
 }
 
 function addLayers(map, offices) {
   'use strict';
 
+  var markers = new L.MarkerClusterGroup({showCoverageOnHover: false});
   var layer = L.geoJson(offices, {
     onEachFeature: function(feature, layer) {
       layer.bindPopup(feature.properties.ORGNAME);
     }
-  }).addTo(map);
+  }).addTo(markers);
 
   map.fitBounds(layer.getBounds());
 
@@ -58,6 +59,8 @@ function addLayers(map, offices) {
     minZoom: 4,
     maxZoom: 18
   }).addTo(map);
+
+  map.addLayer(markers);
 }
 
 function zoomToOffice(map, offices, name) {

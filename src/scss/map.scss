@@ -6,6 +6,7 @@
 @import "leaflet";
 @import "header";
 @import "jquery-autocomplete";
+@import "markercluster";
 
 html,
 body {
@@ -32,6 +33,15 @@ body {
 form {
   @include clearfix;
   width: 100%;
+}
+.ui-menu-item {
+  font-family: $font-sans;
+  color: $color-fws-blue;
+  font-size: 1em;
+
+  &:hover {
+    color: $color-fws-green;
+  }
 }
 
 #autocomplete-search {
