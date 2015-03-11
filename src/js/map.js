@@ -62,14 +62,12 @@
       'Joint Ventures': new L.layerGroup().addTo(map)
     };
 
-    var basemap = L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
+    var basemap = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpeg', {
       attribution: '<a href="#about" class="trigger-modal">About</a>',
-      subdomains: 'abcd',
-      minZoom: 4,
-      maxZoom: 18
+      subdomains: '1234'
     }).addTo(map);
 
-    L.control.layers(null, toggles,{collapsed: false}).addTo(map);
+    L.control.layers(null, toggles,{collapsed: false, position: 'topleft'}).addTo(map);
     map.fitBounds(cluster.getBounds());
     map.addLayer(cluster);
     initModal();
