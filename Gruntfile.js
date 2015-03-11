@@ -1,7 +1,6 @@
 /* globals module, require */
 
 module.exports = function(grunt) {
-
   'use strict';
 
   grunt.initConfig({
@@ -15,40 +14,18 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'js/map.js': [
-            'src/js/vendor/jquery-1.11.2.js', 
-            'src/js/vendor/leaflet.js',
-            'src/js/vendor/leaflet.markercluster.min.js',
-            'src/js/vendor/jquery.easyModal.js', 
-            'src/js/vendor/jquery-autocomplete.min.js', 
-            'src/js/map.js'
-          ]
+          'js/map.js': ['src/js/vendor/leaflet.js', 'src/js/vendor/leaflet.markercluster.min.js', 'src/js/vendor/jquery.easyModal.js', 'src/js/vendor/jquery-autocomplete.min.js', 'src/js/map.js'],
+          'js/wildlife.js': ['src/js/wildlife.js']
         }
       }
     },
 
     concat: {
-      polyfills: {
-        src: ['src/js/vendor/picturefill.js'],
-        dest: 'js/polyfills.js',
-      },
-      offices: {
-        src: 'src/js/offices.js',
-        dest: 'js/offices.js'
-      },
-      map: {
-        src: [
-          'src/js/vendor/leaflet.js',
-          'src/js/vendor/leaflet.markercluster.min.js',
-          'src/js/vendor/jquery.easyModal.js', 
-          'src/js/vendor/jquery-autocomplete.min.js', 
-          'src/js/map.js'
-        ],
-        dest: 'js/map.js'
-      },
-      wildlife: {
-        src: 'src/js/wildlife.js',
-        dest: 'js/wildlife.js'
+      files: {
+        'js/polyfills.js': ['src/js/vendor/picturefill.js'],
+        'js/offices.js':   ['src/js/offices.js'],
+        'js/map.js':       ['src/js/vendor/leaflet.js', 'src/js/vendor/leaflet.markercluster.min.js', 'src/js/vendor/jquery.easyModal.js', 'src/js/vendor/jquery-autocomplete.min.js', 'src/js/map.js'],
+        'js/wildlife.js':  ['src/js/wildlife.js']
       }
     },
 
@@ -62,10 +39,19 @@ module.exports = function(grunt) {
     },
 
     sass: {
-      options: {
-        sourceMap: true
+      dev: {
+        options: {
+          sourceMap: true
+        },
+        files: {
+          'src/css/styles.css': 'src/scss/styles.scss',
+          'src/css/map.css': 'src/scss/map.scss'
+        }
       },
       dist: {
+        options: {
+          outputStyle: 'compressed'
+        },
         files: {
           'src/css/styles.css': 'src/scss/styles.scss',
           'src/css/map.css': 'src/scss/map.scss'
@@ -156,6 +142,6 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('serve', ['shell:jekyllServe']);
-  grunt.registerTask('default', ['sass', 'autoprefixer', 'jshint', 'concat', 'shell:jekyllBuild', 'watch']);
-  grunt.registerTask('build', ['sass', 'autoprefixer', 'jshint', 'concat', 'uglify', 'shell:jekyllBuild']);
+  grunt.registerTask('default', ['sass:dev', 'autoprefixer', 'jshint', 'concat', 'shell:jekyllBuild', 'watch']);
+  grunt.registerTask('build', ['sass:dist', 'autoprefixer', 'jshint', 'concat', 'uglify', 'shell:jekyllBuild']);
 };
