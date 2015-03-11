@@ -3,10 +3,10 @@
 @import "mixins/mixins";
 @import "typebase";
 @import "base";
-@import "leaflet";
 @import "header";
-@import "jquery-autocomplete";
-@import "markercluster";
+@import "vendor/leaflet";
+@import "vendor/jquery-autocomplete";
+@import "vendor/markercluster";
 
 html,
 body {

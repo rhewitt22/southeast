@@ -8,9 +8,11 @@
 @import "gallery";
 @import "footer";
 @import "social";
+@import "vendor/slick";
+@import "vendor/slick-theme";
 
 @import "home";
-@import "map";
+@import "wildlife";
 
 .main-content {
   padding: 0 3%;
