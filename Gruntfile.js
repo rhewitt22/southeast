@@ -13,13 +13,17 @@ module.exports = function(grunt) {
         '* <%= grunt.template.today("yyyy-mm-dd") %> \n' +
         '* Source Files: <%= pkg.repository.url %> */\n'
       },
-      global: {
-        files: [{
-          expand: true,
-          cwd: 'src/js',
-          src: '**/*.js',
-          dest: 'js'
-        }]
+      target: {
+        files: {
+          'js/map.js': [
+            'src/js/vendor/jquery-1.11.2.js', 
+            'src/js/vendor/leaflet.js',
+            'src/js/vendor/leaflet.markercluster.min.js',
+            'src/js/vendor/jquery.easyModal.js', 
+            'src/js/vendor/jquery-autocomplete.min.js', 
+            'src/js/map.js'
+          ]
+        }
       }
     },
 
@@ -27,6 +31,10 @@ module.exports = function(grunt) {
       polyfills: {
         src: ['src/js/vendor/picturefill.js'],
         dest: 'js/polyfills.js',
+      },
+      offices: {
+        src: 'src/js/offices.js',
+        dest: 'js/offices.js'
       },
       map: {
         src: [
@@ -47,7 +55,7 @@ module.exports = function(grunt) {
         force: true,
         reporter: require('jshint-stylish')
       },
-      all: ['src/js/*.js']
+      all: ['src/js/*.js', '!src/js/offices.js']
     },
 
     sass: {
