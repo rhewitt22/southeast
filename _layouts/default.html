@@ -14,5 +14,8 @@
     </section>
 
     {% include footer.html %}
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    {% if page.carousel %}<script src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>{% endif %}
+    {% if page.js %}<script src="{{ site.baseurl }}js/{{ page.js }}"></script>{% endif %}
   </body>
 </html>

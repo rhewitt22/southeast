@@ -38,7 +38,6 @@ module.exports = function(grunt) {
       },
       map: {
         src: [
-          'src/js/vendor/jquery-1.11.2.js', 
           'src/js/vendor/leaflet.js',
           'src/js/vendor/leaflet.markercluster.min.js',
           'src/js/vendor/jquery.easyModal.js', 
@@ -46,6 +45,10 @@ module.exports = function(grunt) {
           'src/js/map.js'
         ],
         dest: 'js/map.js'
+      },
+      wildlife: {
+        src: 'src/js/wildlife.js',
+        dest: 'js/wildlife.js'
       }
     },
 
