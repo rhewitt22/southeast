@@ -21,11 +21,13 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      files: {
-        'js/polyfills.js': ['src/js/vendor/picturefill.js'],
-        'js/offices.js':   ['src/js/offices.js'],
-        'js/map.js':       ['src/js/vendor/leaflet.js', 'src/js/vendor/leaflet.markercluster.min.js', 'src/js/vendor/jquery.easyModal.js', 'src/js/vendor/jquery-autocomplete.min.js', 'src/js/map.js'],
-        'js/wildlife.js':  ['src/js/wildlife.js']
+      js: {
+        files: {
+          'js/polyfills.js': ['src/js/vendor/picturefill.js'],
+          'js/offices.js':   ['src/js/offices.js'],
+          'js/map.js':       ['src/js/vendor/leaflet.js', 'src/js/vendor/leaflet.markercluster.min.js', 'src/js/vendor/jquery.easyModal.js', 'src/js/vendor/jquery-autocomplete.min.js', 'src/js/map.js'],
+          'js/wildlife.js':  ['src/js/wildlife.js']
+        }
       }
     },
 
@@ -44,11 +46,11 @@ module.exports = function(grunt) {
           sourceMap: true
         },
         files: {
-          'src/css/styles.css': 'src/scss/styles.scss',
-          'src/css/map.css': 'src/scss/map.scss'
+          'src/css/unprefixed/styles.css': 'src/scss/styles.scss',
+          'src/css/unprefixed/map.css': 'src/scss/map.scss'
         }
       },
-      dist: {
+      build: {
         options: {
           outputStyle: 'compressed'
         },
@@ -60,7 +62,7 @@ module.exports = function(grunt) {
     },
 
     autoprefixer: {
-      global: {
+      dev: {
         expand: true,
         flatten: true,
         src: 'src/css/*.css',
@@ -111,6 +113,21 @@ module.exports = function(grunt) {
       }
     },
 
+    perfbudget: {
+      default: {
+        options: {
+          url: 'http://www.fws.gov/southeast/',
+          key: 'A.5221be64d468544d6436759414b09177',
+          location: 'ec2-us-east-1:IE 11',
+          budget: {
+            render: '3000',
+            SpeedIndex: '5500',
+            bytesIn: '2000000'
+          }
+        }
+      }
+    },
+
     watch: {
       options: {
         livereload: true
@@ -143,5 +160,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('serve', ['shell:jekyllServe']);
   grunt.registerTask('default', ['sass:dev', 'autoprefixer', 'jshint', 'concat', 'shell:jekyllBuild', 'watch']);
-  grunt.registerTask('build', ['sass:dist', 'autoprefixer', 'jshint', 'concat', 'uglify', 'shell:jekyllBuild']);
+  grunt.registerTask('build', ['sass:build', 'autoprefixer', 'jshint', 'concat', 'uglify', 'shell:jekyllBuild']);
+  grunt.registerTask('test', ['perfbudget']);
 };

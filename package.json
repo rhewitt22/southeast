@@ -18,6 +18,8 @@
     "grunt-svgmin": "^2.0.1",
     "grunt-svgstore": "^0.5.0",
     "jshint-stylish": "^1.0.1",
-    "load-grunt-tasks": "^3.1.0"
+    "load-grunt-tasks": "^3.1.0",
+    "grunt-uncss": "^0.4.1",
+    "grunt-perfbudget": "^0.1.6"
   }
 }
