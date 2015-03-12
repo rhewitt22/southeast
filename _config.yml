@@ -11,7 +11,11 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "/region4/demo/"
 excerpt_separator: <!--more-->
 
-# Social
+collections:
+  events:
+    output: true
+
+# Regional Social -- FO social should be in _data/[office]/social.yml
 twitter_username: usfwssoutheast
 github_username:  usfws
 facebook_username: usfwssoutheast
@@ -22,17 +26,16 @@ instagram_username: usfws
 markdown: kramdown
 
 # Exclusions
-exclude: [
-  .git,
-  .gitignore,
-  .DS_Store,
-  CNAME,
-  src,
-  .sass-cache,
-  package.json,
-  Gruntfile.js,
-  node_modules,
-  README.md,
-  southeast.sublime-project,
-  southeast.sublime-workspace
-]
+exclude:
+  - .git
+  - .gitignore
+  - .DS_Store
+  - CNAME
+  - src
+  - .sass-cache
+  - package.json
+  - Gruntfile.js
+  - node_modules
+  - README.md
+  - southeast.sublime-project
+  - southeast.sublime-workspace

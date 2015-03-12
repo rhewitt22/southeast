@@ -1,0 +1,16 @@
+---
+title: Events
+layout: page
+---
+
+<hr class="news-hr">
+<ul class="news-teasers">
+  {% assign events = site.events | sort: 'date' %}
+  {% for event in events %}
+  <li>
+    {% if event.thumbnail %}<img src="{{ event.thumbnail | prepend: site.baseurl }}" alt="">{% endif %}
+    <span class="news-date">{{ event.date | date: "%B %-d, %Y" }}: </span> <a href="{{ event.url | prepend: site.baseurl }}">{{ event.title }}</a>
+    {% if event.credit %}<p class="news-photo-credit">Photo: {{ event.credit }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
