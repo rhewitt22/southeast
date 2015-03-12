@@ -1,4 +1,37 @@
 ---
-title: Map
-layout: mega-map
 ---
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }} | USFWS Southeast Region{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description | truncate: 160 }}{% endif %}{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | truncate: 160 }}{% endif %}">
+
+  <link rel="stylesheet" href="{{ 'css/map.css' | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ 'feed.xml' | prepend: site.baseurl | prepend: site.baseurl }}" />
+  <script src="{{ 'js/polyfills.js' | prepend: site.baseurl}}"></script>
+  {% include open-graph.html %}
+</head>
+  <body>
+    <div id="map">
+      <header class="top-header">
+        <h3 class="region-heading region-short">Southeast Region</h3>
+        <h3 class="region-heading region-full">U.S. Fish &amp; Wildlife Service Southeast Region</h3>
+        <a href="http://www.fws.gov/" title="U.S. Fish &amp; Wildlife Home"><img class="logo" src="{{ 'img/logo.png' | prepend: site.baseurl }}" alt="Logo of the U.S. Fish &amp; Wildlife Service"></a>
+        <form>
+          <input type="search" placeholder="Search..." id="autocomplete-search">
+        </form>
+      </header>
+      <div class="modal">
+        <h2>About this map</h2>
+        <p>Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a></p>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="{{ 'js/map.js' | prepend: site.baseurl }}"></script>
+  </body>
+</html>
