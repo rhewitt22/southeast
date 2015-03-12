@@ -36,3 +36,8 @@
   position: absolute;
   width: 1px;
 }
+
+@mixin no-style-list() {
+  list-style-type: none;
+  padding: 0;
+}
