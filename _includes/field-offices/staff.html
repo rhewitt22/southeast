@@ -1,0 +1,8 @@
+<ul class="staff-listing">
+{% for employee in site.data.[page.office].staff %}
+  <li>
+    <h3 class="employee-name">{{employee.name}}: <span>{{employee.position}}</span></h3>
+    <p>Phone: {{employee.phone}} <br> Email: <a href="mailto:{{employee.email}}">{{employee.email}}</a></p>
+  </li>
+{% endfor %}
+</ul>
