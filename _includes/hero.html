@@ -1,3 +1,12 @@
+{% if page.hero %}
+<img sizes="100vw"
+    srcset="{{ site.baseurl }}img/hero/{{page.hero}}/200.jpg 200w,
+            {{ site.baseurl }}img/hero/{{page.hero}}/400.jpg 400w,
+            {{ site.baseurl }}img/hero/{{page.hero}}/600.jpg 600w,
+            {{ site.baseurl }}img/hero/{{page.hero}}/1000.jpg 1000w,
+            {{ site.baseurl }}img/hero/{{page.hero}}/1400.jpg 1400w"
+    src="{{ site.baseurl }}img/hero/{{page.hero}}/200.jpg">
+{% else %}
 <img sizes="100vw"
     srcset="{{ 'img/hero/monarch/200.jpg' | prepend: site.baseurl }} 200w,
             {{ 'img/hero/monarch/400.jpg' | prepend: site.baseurl }} 400w,
@@ -5,3 +14,4 @@
             {{ 'img/hero/monarch/1000.jpg' | prepend: site.baseurl }} 1000w,
             {{ 'img/hero/monarch/1400.jpg' | prepend: site.baseurl }} 1400w"
     src="{{ 'img/hero/monarch/200.jpg' | prepend: site.baseurl }} " alt="Monarch Butterfly">
+{% endif %}
