@@ -1,11 +1,5 @@
 <hr class="news-hr">
 <ul class="news-teasers">
-  {% assign events = site.events | sort: 'date' %}
-  {% with_scope events.date > today %}
-   {% for event in events %}
-      {{event.title}}
-    {% endfor %}
-  {%endwith_scope %}
   {% for event in events limit:3 %}
   <li>
     {% if event.thumbnail %}<img src="{{ event.thumbnail | prepend: site.baseurl }}" alt="">{% endif %}
