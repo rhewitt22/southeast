@@ -1,4 +1,5 @@
 {% if page.hero %}
+<!-- Page defined hero image -->
 <img class="hero-image" sizes="100vw"
     srcset="{{ site.baseurl }}img/hero/{{page.hero}}/200.jpg 200w,
             {{ site.baseurl }}img/hero/{{page.hero}}/400.jpg 400w,
@@ -7,6 +8,7 @@
             {{ site.baseurl }}img/hero/{{page.hero}}/1400.jpg 1400w"
     src="{{ site.baseurl }}img/hero/{{page.hero}}/200.jpg">
 {% else %}
+<!-- Default hero image -->
 <img class="hero-image" sizes="100vw"
     srcset="{{ 'img/hero/monarch/200.jpg' | prepend: site.baseurl }} 200w,
             {{ 'img/hero/monarch/400.jpg' | prepend: site.baseurl }} 400w,
