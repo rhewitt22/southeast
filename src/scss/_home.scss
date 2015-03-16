@@ -21,6 +21,11 @@ $priorities-breakpoint: 900px;
 .launch-point-item {
   position: relative;
   margin: $leading auto;
+  transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   &:before {
     position: absolute;
@@ -106,6 +111,12 @@ $priorities-breakpoint: 900px;
 
   li {
     margin-bottom: $leading;
+    transition: all 0.5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
     @media (min-width: $priorities-breakpoint) {
       display: inline-block;
       width: 47.5%;
