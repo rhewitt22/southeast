@@ -1,6 +1,10 @@
 $header-background-color: $color-fws-green;
 $header-navigation-breakpoint: 850px;
 
+.skip-to-content {
+  @include visuallyhidden;
+}
+
 .top-header {
   background-color: $header-background-color;
   height: 60px;
