@@ -31,7 +31,7 @@ $header-navigation-breakpoint: 850px;
       display: inline-block;
       background-color: darken($header-background-color, 5);
       border-radius: 5px;
-      transition: background-color 0.5s ease;
+      transition: background-color 0.75s ease;
 
       &:last-child {
         margin-right: 0;
