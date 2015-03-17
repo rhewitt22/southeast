@@ -68,6 +68,7 @@
   "wsh"           : false,
   "yui"           : false,
   "globals"       : {
-    "L": false
+    "L": false,
+    "Handlebars": false
   }
 }
