@@ -1,6 +1,10 @@
 @import "links";
 @import "inputs";
 
+#main-content {
+  padding: 0 3%;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
