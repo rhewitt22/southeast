@@ -16,19 +16,21 @@ module.exports = function(grunt) {
         files: {
           'js/map.js': ['src/js/vendor/leaflet.js', 'src/js/vendor/leaflet.markercluster.min.js', 'src/js/vendor/jquery.easyModal.js', 'src/js/vendor/jquery-autocomplete.min.js', 'src/js/map.js'],
           'js/wildlife.js': ['src/js/wildlife.js'],
-          'js/jobs.js': ['src/js/jobs.js']
+          'js/jobs.js': ['src/js/jobs.js'],
+          'js/federal-register.js': ['src/js/federal-register.js']
         }
       }
     },
 
-    concat: {
+    concat: { // Quicker than the uglify task, used for development
       js: {
         files: {
           'js/polyfills.js': ['src/js/vendor/picturefill.js'],
           'js/offices.js':   ['src/js/offices.js'],
           'js/map.js':       ['src/js/vendor/leaflet.js', 'src/js/vendor/leaflet.markercluster.min.js', 'src/js/vendor/jquery.easyModal.js', 'src/js/vendor/jquery-autocomplete.min.js', 'src/js/map.js'],
           'js/wildlife.js':  ['src/js/wildlife.js'],
-          'js/jobs.js': ['src/js/jobs.js']
+          'js/jobs.js': ['src/js/jobs.js'],
+          'js/federal-register.js': ['src/js/federal-register.js']
         }
       }
     },
