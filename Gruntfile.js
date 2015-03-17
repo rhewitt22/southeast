@@ -15,7 +15,8 @@ module.exports = function(grunt) {
       target: {
         files: {
           'js/map.js': ['src/js/vendor/leaflet.js', 'src/js/vendor/leaflet.markercluster.min.js', 'src/js/vendor/jquery.easyModal.js', 'src/js/vendor/jquery-autocomplete.min.js', 'src/js/map.js'],
-          'js/wildlife.js': ['src/js/wildlife.js']
+          'js/wildlife.js': ['src/js/wildlife.js'],
+          'js/jobs.js': ['src/js/jobs.js']
         }
       }
     },
@@ -26,7 +27,8 @@ module.exports = function(grunt) {
           'js/polyfills.js': ['src/js/vendor/picturefill.js'],
           'js/offices.js':   ['src/js/offices.js'],
           'js/map.js':       ['src/js/vendor/leaflet.js', 'src/js/vendor/leaflet.markercluster.min.js', 'src/js/vendor/jquery.easyModal.js', 'src/js/vendor/jquery-autocomplete.min.js', 'src/js/map.js'],
-          'js/wildlife.js':  ['src/js/wildlife.js']
+          'js/wildlife.js':  ['src/js/wildlife.js'],
+          'js/jobs.js': ['src/js/jobs.js']
         }
       }
     },
@@ -160,6 +162,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('serve', ['shell:jekyllServe']);
   grunt.registerTask('default', ['sass:dev', 'autoprefixer', 'jshint', 'concat', 'shell:jekyllBuild', 'watch']);
-  grunt.registerTask('build', ['sass:build', 'autoprefixer', 'jshint', 'concat', 'uglify', 'shell:jekyllBuild']);
+  grunt.registerTask('build', ['sass:build', 'autoprefixer', 'jshint', 'uglify', 'shell:jekyllBuild']);
   grunt.registerTask('test', ['perfbudget']);
 };
