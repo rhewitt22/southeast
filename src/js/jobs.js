@@ -3,7 +3,8 @@
 
   var source = $('#jobs-template').html(),
       template = Handlebars.compile(source),
-      $jobs = $('.job-list');
+      $jobs = $('.job-list'),
+      $loading = $('.spinner');
 
   // Call the USA Jobs API
   function sendRequest () {
@@ -19,6 +20,7 @@
       url: baseUrl,
       data: parameters
     }).success( function (data) {
+      $loading.remove();
       if (data.TotalJobs === 0) {
         $jobs.html('Sorry, no results found.  Check back soon!');
       } else {

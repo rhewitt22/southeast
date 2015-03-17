@@ -180,6 +180,7 @@ th {
   padding: 0;
 }
 
-.button {
+.button,
+button {
   @include button;
 }
